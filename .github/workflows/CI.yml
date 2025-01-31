@@ -1,0 +1,20 @@
+name: "Node CI CD - AWS ECS Hosting - Private Nodes"
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: "Check Node Version"
+        run: node --version
